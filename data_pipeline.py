@@ -6,8 +6,8 @@ import time
 def build_production_pipeline():
     print("Step 1: Connecting to stats.nba.com via official NBA API...")
     
-    # Ingesting consecutive past regular seasons for optimal model training
-    seasons = ['2023-24', '2024-25']
+    # Updated to include the 2025-26 season data
+    seasons = ['2023-24', '2024-25', '2025-26']
     raw_logs = []
     
     for season in seasons:
@@ -19,10 +19,10 @@ def build_production_pipeline():
                 season_type_all_star='Regular Season'
             )
             raw_logs.append(log.get_data_frames())
-            # 9/10 Engineering Practice: Explicit API backoff delays prevent getting rate-limited
+            # Explicit API backoff delays prevent getting rate-limited
             time.sleep(2) 
         except Exception as e:
-            print(f"❌ API connection fault for season {season}: {e}")
+            print(f"API connection fault for season {season}: {e}")
             return
             
     df = pd.concat(raw_logs, ignore_index=True)
