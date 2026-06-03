@@ -4,7 +4,7 @@ from sklearn.metrics import log_loss, roc_auc_score
 import joblib
 
 def run_training_suite():
-    print("📊 Loading production feature sets...")
+    print("Loading production feature sets...")
     df = pd.read_csv('nba_production_data.csv')
     df = df.sort_values('GAME_DATE_HOME').reset_index(drop=True)
     

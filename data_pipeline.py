@@ -15,10 +15,10 @@ def build_production_pipeline():
         try:
             log = leaguegamelog.LeagueGameLog(
                 season=season, 
-                league_id_all_teams='00', 
+                league_id='00', 
                 season_type_all_star='Regular Season'
             )
-            raw_logs.append(log.get_data_frames())
+            raw_logs.extend(log.get_data_frames())
             # Explicit API backoff delays prevent getting rate-limited
             time.sleep(2) 
         except Exception as e:
@@ -55,7 +55,6 @@ def build_production_pipeline():
         suffixes=('_HOME', '_AWAY')
     )
     
-    # Clean up and select the features recruiters look for
     final_features = processed_df[[
         'GAME_ID', 'GAME_DATE_HOME', 'TEAM_NAME_HOME', 'TEAM_NAME_AWAY',
         'DAYS_REST_HOME', 'DAYS_REST_AWAY', 'ROLLING_PPG_HOME', 'ROLLING_PPG_AWAY',
