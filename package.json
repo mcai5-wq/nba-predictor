@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/react": "^19.2.16",
+    "@types/react-dom": "^19.2.3"
+  },
+  "dependencies": {
+    "@types/recharts": "^1.8.29",
+    "recharts": "^3.8.1"
+  }
+}
