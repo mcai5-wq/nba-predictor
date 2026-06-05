@@ -25,7 +25,6 @@ def run_training_suite():
     
     print(f"Training records count: {len(X_train)} | Validation test records: {len(X_test)}")
     
-    # Initialize Gradient Boosted Trees Framework
     model = XGBClassifier(
         n_estimators=200,
         max_depth=5,

@@ -21,7 +21,7 @@ model_pack, data_records = load_production_assets()
 if model_pack is None:
     st.error("System Failure: Critical production model files are missing. Please execute 'data_pipeline.py' and 'train_model.py'.")
 else:
-    # Identify unique team entities in database
+    # Identify diff teams in database
     available_teams = sorted(list(set(data_records['TEAM_NAME_HOME'].unique())))
     
     st.sidebar.header("Matchup Configuration Engine")
@@ -31,7 +31,7 @@ else:
     if home_selection == away_selection:
         st.sidebar.error("Validation Halt: Please select distinct competing franchises.")
     else:
-        # 9/10 Feature Lookup: Pulling true real-world stats dynamically from our historical dataset
+        
         home_team_data = data_records[data_records['TEAM_NAME_HOME'] == home_selection].tail(1)
         away_team_data = data_records[data_records['TEAM_NAME_AWAY'] == away_selection].tail(1)
         
