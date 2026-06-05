@@ -5,7 +5,7 @@ import numpy as np
 import plotly.express as px
 
 st.set_page_config(page_title="Pro-Ops NBA Predictor", layout="wide")
-st.title("Production Analytics Engine: NBA Playoff & Matchup Projections")
+st.title("NBA Matchup & Playoff Predictor")
 
 @st.cache_resource
 def load_production_assets():
@@ -42,7 +42,7 @@ else:
         base_home_allow = float(home_team_data['ROLLING_ALLOWED_PPG_HOME'].iloc[0]) if len(home_team_data) > 0 else 2.1
         base_away_allow = float(away_team_data['ROLLING_ALLOWED_PPG_AWAY'].iloc[0]) if len(away_team_data) > 0 else -1.5
         st.sidebar.markdown("---")
-        st.sidebar.subheader("Live Feature Calibration Modifiers")
+        st.sidebar.subheader("Adjust Sliders")
         h_ppg = st.sidebar.slider(f"{home_selection} Expected Offense", 95.0, 130.0, base_home_ppg)
         a_ppg = st.sidebar.slider(f"{away_selection} Expected Offense", 95.0, 130.0, base_away_ppg)
         h_rest = st.sidebar.slider(f"{home_selection} Schedule Rest Days", 0, 4, 2)
@@ -95,7 +95,7 @@ else:
             st.plotly_chart(fig_prob, use_container_width=True)
 
         with col2:
-            st.markdown("### Production Feature Signatures")
+            st.markdown("### Factors to Account For")
             st.caption(
                 "This data surfaces real coefficients mapped straight out of the optimized XGBoost architecture training iterations."
             )
