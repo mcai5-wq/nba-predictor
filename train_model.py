@@ -18,7 +18,7 @@ def run_training_suite():
     X = df[feature_columns]
     y = df['HOME_WIN_TARGET']
     
-    # 9/10 Time-Series Walkforward validation split (80% training data, 20% future evaluation data)
+
     split_idx = int(len(df) * 0.8)
     X_train, X_test = X.iloc[:split_idx], X.iloc[split_idx:]
     y_train, y_test = y.iloc[:split_idx], y.iloc[split_idx:]
