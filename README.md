@@ -3,6 +3,7 @@
 <div>
   An end to end ML application that uses real world NBA data to train an optimized prediction model, displayed on an interactive web page. 
 </div>
+<br>
 <p>
   Many factors impact a team's chance of winning. Time off before the next game, who they're facing, injuries, team success and many more. Using updated NBA data and XGBoost model, a team's chance of winning that game can be calculated. 
 </p>
