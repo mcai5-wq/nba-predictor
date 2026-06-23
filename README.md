@@ -6,7 +6,7 @@ An end to end ML application that uses real world NBA data to train an optimized
 <div>
   pip install streamlit pandas numpy xgboost 
 </div>
-<t></t>
+<div></div>
 <div>
   scikit-learn joblib plotly nba_api
 </div>
