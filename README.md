@@ -4,20 +4,17 @@ An end to end ML application that uses real world NBA data to train an optimized
 
 
 <div>
-  pip install streamlit pandas numpy xgboost 
+  <ul>
+    <li>pip install streamlit pandas numpy xgboost scikit-learn joblib plotly nba_api
+</li>
+    <li>
+      python data_pipeline.py
+    </li>
+    <li>
+      python train_model.py
+    </li>
+    <li>
+      python -m streamlit run app.py
+    </li>
+  </ul>
 </div>
-<div></div>
-<div>
-  scikit-learn joblib plotly nba_api
-</div>
-<div>
-  python data_pipeline.py
-</div>
-<div>
-  python train_model.py
-</div>
-<div>
-  python -m streamlit run app.py
-</div>
-
-
